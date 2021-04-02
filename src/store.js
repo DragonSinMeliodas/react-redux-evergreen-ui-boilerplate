@@ -1,6 +1,6 @@
 import { combineReducers, createStore } from "redux";
 import homePage from "./containers/HomePage/reducers";
-
-const reducers = combineReducers({ homePage });
+import userPage from "./containers/UserPage/reducer";
+const reducers = combineReducers({ homePage, userPage });
 
 export default createStore(reducers);

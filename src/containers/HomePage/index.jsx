@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
 import { setUsers } from "./actions";
 import { makeSelectUsers } from "./selectors";
+import UsersList from "./usersList";
 
 //  defining which selector to use to get the state
 const stateSelector = createSelector(makeSelectUsers, (users) => ({
@@ -37,5 +38,9 @@ export default function HomePage(props) {
 
   console.log("users: ", users);
 
-  return <div>Hello World.!</div>;
+  return (
+    <div>
+      <UsersList />
+    </div>
+  );
 }
