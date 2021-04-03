@@ -1,19 +1,15 @@
+import React, { Component } from "react";
+import Posts from "./components/Posts";
 import "./App.css";
-import HomePage from "./containers/HomePage";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import { UserPage } from "./containers/UserPage";
-function App() {
-  return (
-    <Router>
+import PostForm from "./components/PostForm";
+export default class App extends Component {
+  render() {
+    return (
       <div className="App">
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/user/:userId" component={UserPage} />
-          <Route>404 Not Found!</Route>
-        </Switch>
+        <PostForm />
+        <hr />
+        <Posts />
       </div>
-    </Router>
-  );
+    );
+  }
 }
-
-export default App;
